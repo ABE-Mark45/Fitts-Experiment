@@ -88,6 +88,10 @@
                 };
                 
                 var [m, b] = linearRegression(IDArray, default_movementTimeArray);
+
+                $('#m').text(`m = ${m.toFixed(2)}`);
+                $('#b').text(`b = ${b.toFixed(2)}`);
+
                 console.log(max(IDArray));
                 var fit = {
                     x: [min(IDArray), max(IDArray)],
@@ -132,6 +136,10 @@
 
                 
                 var [m, b] = linearRegression(IDArray, movementTimeArray);
+
+                $('#m').text(`m = ${m.toFixed(2)}`);
+                $('#b').text(`b = ${b.toFixed(2)}`);
+                
                 var fit = {
                     x: [min(IDArray), max(IDArray)],
                     y: [b + m*min(IDArray), b + m*max(IDArray)],
@@ -211,5 +219,14 @@
             </div>
         </div>
         <div id="plot" style="width: 600px; height: 600px;margin-left: auto;margin-right: auto;margin-top: 3cm;"></div>
+        <div>
+            <div class="d-flex justify-content-center">
+                <h1 id="b"></h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <h1 id="m"></h1>
+            </div>        
+
+        </div>
     </body>
 </html>
